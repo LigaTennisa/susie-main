@@ -1,0 +1,247 @@
+*, *:after, *:before {
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: .5s ease-in-out;
+    /* добавим плавность переходов для всех элементов страницы*/
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+
+html, body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.header {
+    background-color: #21293E;
+}
+/* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
+header:after, .container:after, footer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+ /* стилевой класс, который управляет шириной контейнера сетки*/
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1750px;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    background: white;
+    position: relative;
+}
+
+ /* логотип */
+.logo {
+    display:flex;
+}
+.ligatennisa {
+    font-weight: 400;
+    font-size: 35px;
+    transform: translateY(20%);
+    color:white;
+    text-decoration: none;
+}
+img  {
+    overflow-x: hidden;
+}
+
+
+
+ /* меню */
+ #menu {
+    text-align: center;
+    transform: translateY(-250%);
+ }
+ #menu li {
+    display: inline-block;
+    margin-right: 70px;
+ }
+ #menu a {
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+    display: block;
+    line-height: 40px;
+ }
+ #menu a:hover {
+    color: #B3D131;
+ }
+ #menu li:last-child {
+    margin-right: 0;
+ }
+
+
+
+ /* авторизация */
+.topnav-right {
+    float: right;
+    position: relative; 
+    transform: translate(20%, -450%);
+}
+.topnav-right a {
+    margin-right : 50px;
+}
+.btnregistr, .btnlogin {
+    color:white;
+    text-decoration: none;
+    font-size: 22px;
+} 
+.btnregistr:hover, .btnlogin:hover {
+    color: #B3D131;
+}
+
+
+ /* кнопка переключения меню, появляющаяся при ширине 768px */
+ .nav-toggle {
+    display: none;
+    position: relative;
+    float: right;
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+    background: #B3D131;
+    cursor: pointer;
+ }
+ .nav-toggle span {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 3px;
+    right: 3px;
+    height: 7px;
+    background: white;
+ }
+ .nav-toggle span:before, .nav-toggle span:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+ }
+ .nav-toggle span:before {
+    top: -10px;
+ }
+ .nav-toggle span:after {
+    bottom: -10px;
+ }
+ /* класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню*/
+ #menu.active {
+    max-height: 123px;
+ }
+
+ 
+ @media (max-width: 1040px) {
+    /* показываем кнопку для переключения верхней навигации */
+    .nav-toggle {
+       display: block;
+    }
+    header {
+       padding: 10px 0;
+    }
+    /* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */
+    #menu {
+       max-height: 0;
+       background: white;
+       float: none;
+       position: absolute;
+       overflow: hidden;
+       transform: translateY(63px);
+       right: 0;
+       left: 0;
+       margin: 0;
+       padding: 0;
+       z-index: 3;
+
+    }
+    /* делаем элементы списка блочными, чтобы они располагались друг под другом */
+    #menu li {
+       display: block;
+       text-align: center;
+       border-bottom: 1px solid #EBEBE3;
+       margin-right: 0;
+    }
+    /* отменяем обтекание левой и правой колонок, устанавливаем им ширину 100%*/
+    .topnav-right {
+        transform:translateY(50%);
+    }
+ }
+ 
+ @media (max-width: 480px) {
+    /* отменяем обтекание для логотипа и выравниваем по центру*/
+    .navbar-brand {
+       float: none;
+       margin: 0 auto 19px;
+       display: table;
+    }
+    /* позиционируем меню на увеличившуюся высоту шапки */
+    #menu {
+       top: 118px;
+    }
+    .topnav-right {
+        float: left;
+        margin-left: 0;
+     }
+ }
+
+
+
+
+
+
+footer{
+    position: relative;
+    width: 100%;
+    padding: 20px 50px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+.social,
+.menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+.social li,
+.menu li{
+    list-style: none;
+}
+.social li a {
+    font-size: 2em;
+    color: black;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+footer p {
+    color: black;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+} 
